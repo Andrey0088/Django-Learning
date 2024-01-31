@@ -5,6 +5,7 @@ from .views import index, contato
 #o ponto indica que é do próprio módulo core, do arquivo views, importa o arquivo/view index e contato.;
 
 #configurando rotas:
+#index e contato são views
 urlpatterns = [
     path('', index),
     path('contato', contato),
