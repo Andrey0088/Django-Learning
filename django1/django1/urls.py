@@ -20,5 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
-    #tudo que for para a raiz, manda para a aplicação core, ela que vai receber essas requisições.
+#tudo que for para a raiz, manda para a aplicação core, ela que vai receber essas requisições.
 ]
