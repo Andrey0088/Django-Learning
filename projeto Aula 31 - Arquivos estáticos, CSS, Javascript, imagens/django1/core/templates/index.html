@@ -1,0 +1,42 @@
+<!-- isso carrega o STATIC_URL ou STATIC_ROOT do settings, dependendo de qual for usar:  -->
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Django 1 - index</title>
+        <link rel="stylesheet" href="{% static 'css/estilos.css'%}">
+    </head>
+    <body>
+        <h1>Index</h1>
+
+        <img src="{% static 'images/django.png' %}" alt="">
+
+        <h2>{{curso}}</h2>
+
+        <p>{{outro}}</p>
+        <br></br>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for produto in produtos %}
+                <tr>
+                    <td><a href="{% url 'produtoName' produto.id %}">{{ produto.nome }}</a></td>
+                    <!-- url + 'nome da rota' + parametro de entrada -->
+                    <td>{{ produto.preco }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        <table>
+        <button onclick="teste();">Clique</button>
+        <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+
+    </body>
+</html>
